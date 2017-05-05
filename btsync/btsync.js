@@ -14,7 +14,12 @@ if (command)
 {
 	switch ( command )
 	{
-		case "init":
+
+                case "stop":
+                     stop();
+                     break;
+
+ 		case "init":
 
 			init();
 
@@ -79,6 +84,7 @@ function init()
 	var config = {};
 
 	config.device_name = "btsync-docker-" + os.hostname();
+	config.folder_rescan_interval =0;
 	config.listening_port = 55555;
 	config.check_for_updates = true;
 	config.use_upnp = true;
@@ -93,21 +99,23 @@ function init()
 	fs.writeFileSync("/btsync/config", JSON.stringify(config));
 }
 
+function stop()
+{
+
+        if (pid)
+        {
+                // console.log("kill btsync");
+                exec("kill -9 " + pid);
+        }
+        else
+        {
+                //console.log("btsync not running");
+        }
+}
 
 function restart()
 {
-	var pid = exec("pidof btsync").stdout;
-	
-	if (pid)
-	{
-		// console.log("kill btsync");
-		exec("kill -9 " + pid);
-	}
-	else
-	{
-		//console.log("btsync not running");
-	}
-
+        stop();
 	exec("btsync --config /btsync/config");
 }
 

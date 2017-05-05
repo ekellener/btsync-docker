@@ -7,7 +7,7 @@ then
 	nodejs btsync.js add-folder $1 $2
 fi
 
-nodejs btsync.js restart
-./console.sh
+# Changed to stop instead of restart so start can run inline
+nodejs btsync.js stop
 
-/bin/bash
+exec btsync --config /btsync/config --nodaemon

@@ -1,0 +1,22 @@
+{
+  "device_name": "btsync-vagrant-ubuntu-trusty-64",
+  "listening_port": 55555,
+  "storage_path": "/btsync",
+  "use_upnp": true,
+  "download_limit": 0,
+  "upload_limit": 0,
+  "shared_folders": [
+    {
+      "secret": "1234",
+      "dir": "/dir",
+      "use_relay_server": true,
+      "use_tracker": false,
+      "search_lan": true,
+      "use_sync_trash": true,
+      "overwrite_changes": false,
+      "selective_sync": false,
+      "known_hosts": []
+    }
+  ],
+ 
+}

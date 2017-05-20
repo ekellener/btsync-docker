@@ -17,7 +17,7 @@ RUN ln -s /usr/bin/rslsync /usr/bin/btsync
 
 WORKDIR /btsync
 
-#ADD btsync /btsync
+
 ADD start_btsync.sh start_btsync.sh
 ADD config.json config.json
 RUN mkdir /btsync/storage

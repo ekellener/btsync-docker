@@ -27,6 +27,6 @@ RUN mkdir /btsync/storage
 EXPOSE 55555
 
 
-# Arguments: DIR SECRET
+# Arguments Passed: DIR SECRET
 ENTRYPOINT ["/bin/bash", "start_btsync.sh"]
 RUN [ "cross-build-end" ] 

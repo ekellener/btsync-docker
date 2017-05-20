@@ -18,7 +18,7 @@ RUN ln -s /usr/bin/rslsync /usr/bin/btsync
 WORKDIR /btsync
 
 
-ADD start_btsync.sh start_btsync.sh
+ADD run_btsync.sh run_btsync.sh
 ADD config.json config.json
 RUN mkdir /btsync/storage
 
@@ -26,4 +26,4 @@ EXPOSE 55555
 
 
 # Arguments: DIR SECRET
-ENTRYPOINT ["/bin/bash", "start_btsync.sh"]
+ENTRYPOINT ["/bin/bash", "run_btsync.sh"]

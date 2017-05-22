@@ -1,5 +1,5 @@
 {
-  "device_name": "btsync-vagrant-ubuntu-trusty-64",
+  "device_name": "my Device",
   "listening_port": 55555,
   "storage_path": "/btsync",
   "use_upnp": true,
@@ -13,7 +13,7 @@
       "overwrite_changes": false,
       "selective_sync": false,
       "known_hosts": [],
-      "secret": "AP3WYXGCTXJDODBQHQEWVHCPSW7RTERWJ",
+      "secret": "Sssh be very quiet",
       "dir": "/worlds",
       "use_relay_server": true
     }

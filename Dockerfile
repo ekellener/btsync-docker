@@ -20,6 +20,7 @@ WORKDIR /btsync
 
 ADD run_btsync.sh run_btsync.sh
 ADD config.json config.json
+ADD config.json config.default.json
 RUN mkdir /btsync/storage
 
 EXPOSE 55555

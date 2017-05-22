@@ -29,6 +29,7 @@ fi
 
 btprefix="bt_"
 btsfprefix="btsf_"
+btdfprefix="btdf_"
 while IFS='=' read -r -d '' n v; do
    if [[ "$n" == "$btprefix"* ]] ; then
      echo "Need to change": $n "to " $v >> /tmp/log.txt;	
@@ -45,6 +46,17 @@ if [[ "$n" == "$btsfprefix"* ]] ; then
     cat config.tmp >>/tmp/log.txt
     cp config.tmp config.json
     fi
+
+if [[ "$n" == "$btdfprefix"* ]] ; then
+     echo "Need to change in default Folders": $n "to " $v >> /tmp/log.txt ;       
+     cm=" jq '.+{\"folder_defaults.${n#$btdfprefix}\": $v}'  config.json >config.tmp "
+    eval $cm 
+    echo $cm >>tmp/log.txt
+    cat config.tmp >>/tmp/log.txt
+    cp config.tmp config.json
+    fi
+
+
 
 done < <(env -0)
 

@@ -7,15 +7,16 @@
   "upload_limit": 0,
   "shared_folders": [
     {
+      "secret": "1234",
+      "dir": "/dir",
+      "use_relay_server": true,
       "use_tracker": false,
       "search_lan": true,
       "use_sync_trash": true,
       "overwrite_changes": false,
       "selective_sync": false,
-      "known_hosts": [],
-      "secret": "AP3WYXGCTXJDODBQHQEWVHCPSW7RTERWJ",
-      "dir": "/worlds",
-      "use_relay_server": true
+      "known_hosts": []
     }
   ]
+ 
 }

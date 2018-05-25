@@ -8,7 +8,7 @@ ENV DEBIAN_FRONTEND noninteractive
 
 
 ########## BTSYNC ##########
-RUN apk add --update curl jq 
+RUN apk add --update bash curl jq 
 
 RUN curl -o /usr/bin/btsync.tar.gz  https://download-cdn.resilio.com/stable/linux-armhf/resilio-sync_armhf.tar.gz
 RUN cd /usr/bin; tar xvzf btsync.tar.gz; rm btsync.tar.gz;

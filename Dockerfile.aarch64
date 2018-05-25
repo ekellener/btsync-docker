@@ -1,4 +1,4 @@
-FROM docker.io/project31/aarch64-alpine-qemu:3.5.4
+FROM docker.io/project31/aarch64-alpine-qemu:3.5-7
 
 RUN [ "cross-build-start" ]
 
@@ -8,12 +8,7 @@ ENV DEBIAN_FRONTEND noninteractive
 
 
 ########## BTSYNC ##########
-
-RUN apt-get update -y
-RUN apt-get upgrade -y
-
-RUN apt-get install curl -y
-RUN apt-get install jq -y
+RUN apk add --update curl jq 
 
 RUN curl -o /usr/bin/btsync.tar.gz  https://download-cdn.resilio.com/stable/linux-armhf/resilio-sync_armhf.tar.gz
 RUN cd /usr/bin; tar xvzf btsync.tar.gz; rm btsync.tar.gz;
